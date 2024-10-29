@@ -6,4 +6,4 @@ services:
     ports:
       - "4173:4173"
     environment:
-      NODE_ENV: preview
+      NODE_ENV: production  # Setze dies auf 'production', wenn du in der Produktion bist.
