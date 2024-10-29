@@ -1,18 +1,19 @@
-# Basis-Image auswählen (z.B. Node.js)
+# 1. Basis-Image
 FROM node:14
 
-# Arbeitsverzeichnis erstellen
+# 2. Arbeitsverzeichnis im Container erstellen
 WORKDIR /app
 
-# Abhängigkeiten kopieren und installieren
+# 3. Abhängigkeiten installieren
 COPY package*.json ./
 RUN npm install
 
-# Code kopieren
+# 4. Code kopieren und Projekt bauen
 COPY . .
+RUN npm run build  # Baut die statischen Dateien
 
-# Port festlegen
-EXPOSE 3000
+# 5. Exponiere den Port
+EXPOSE 4173  # Vite Preview verwendet standardmäßig Port 4173
 
-# Startbefehl
+# 6. Start-Script
 CMD ["npm", "start"]
