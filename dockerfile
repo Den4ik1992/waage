@@ -19,5 +19,5 @@ RUN npm run build
 # Setze den Port, auf dem die App laufen wird
 EXPOSE 4173
 
-# Starte die App im Vorschau-Modus
-CMD ["npm", "run", "preview"]
+# Starte die App im Vorschau-Modus und ermögliche externen Zugriff
+CMD ["npm", "run", "preview", "--", "--host"]
